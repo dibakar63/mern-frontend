@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+//import './auth.css'
+import Profile from './Profile'
 
-function App() {
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
+import Register from './Register'
+import {Routes,Route} from 'react-router-dom'
+const App = () => {
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path='/' element={<Register/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+      </Routes>
+      
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
